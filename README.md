@@ -4,8 +4,6 @@ Crowdsourced [table](https://mvi.github.io/UnitySystemInfoTable/) of system capa
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-blue.svg)](http://makeapullrequest.com) [![GitHub](https://img.shields.io/github/license/mvi/UnitySystemInfoTable)](https://github.com/mvi/UnitySystemInfoTable/blob/master/LICENSE)
 
-[View the table](https://mvi.github.io/UnitySystemInfoTable/)
-
 Unity provides the [SystemInfo](https://docs.unity3d.com/ScriptReference/SystemInfo.html) API which allows you to find out the capabilities of the device you're running on. Knowing which devices support what is important when making technical decisions about what you can use on your target devices on new projects.
 
 The Unity SystemInfo Table project is intended to allow Unity developers to contribute to a shared table so we can map out what common devices support.
