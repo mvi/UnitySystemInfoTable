@@ -1,6 +1,6 @@
-# Unity SystemInfo Table
+# [Unity SystemInfo Table](https://mvi.github.io/UnitySystemInfoTable/)
 
-Crowdsourced table of system capabilities from different devices
+Crowdsourced [table](https://mvi.github.io/UnitySystemInfoTable/) of system capabilities from different devices
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-blue.svg)](http://makeapullrequest.com) [![GitHub](https://img.shields.io/github/license/mvi/UnitySystemInfoTable)](https://github.com/mvi/UnitySystemInfoTable/blob/master/LICENSE)
 
