@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width">
+		<title>SystemInfo Table</title>
+		<style type="text/css">
+			body 
+			{
+				background-color:#fafafa;
+				margin: 0 !important;
+				padding: 0 !important;
+				font-size: 16px;
+				font-weight:300;
+				line-height: 1.8;
+				font-family: 'Roboto', Helvetica, Arial, sans-serif;
+				color: #444;
+			}
+			h1
+			{
+				padding: 0 15px;
+				font-size: 2.000em;
+				color: #1e3141;
+				font-weight: bold;
+				line-height: 1.4em;
+				font-family: 'Open Sans',Helvetica,Arial,Helvetica,sans-serif;
+				text-shadow: 1px 1px 1px rgba(255,255,255,1);
+			}
+			h2, h3, h4
+			{
+				line-height: 1.4em;
+				font-family: 'Open Sans',Helvetica,Arial,Helvetica,sans-serif;
+				text-shadow: 1px 1px 1px rgba(255,255,255,1);
+			}
+			a
+			{
+				font-weight:400;
+				text-decoration: none;
+			}
+			a:visited
+			{
+				color:blue;
+			}
+			p
+			{
+				padding: 0 15px;
+				margin: 0;
+				text-shadow: 1px 1px 1px rgba(255,255,255,1);
+				color: #444;
+			}
+			pre 
+			{
+				font-size:10pt;
+				white-space: pre-wrap;       /* CSS 3 */
+				white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+				white-space: -pre-wrap;      /* Opera 4-6 */
+				white-space: -o-pre-wrap;    /* Opera 7 */
+				word-wrap: break-word;       /* Internet Explorer 5.5+ */
+				border-width: thin;
+				border-style: solid;
+				padding: 10px;
+				border-color: #eee;
+			}
+			table {
+			    border-collapse: collapse;
+			    margin: 25px 0;
+			    font-size: 0.9em;
+			    min-width: 400px;
+			    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+			}
+			thead tr {
+			    background-color: #009879;
+			    color: #ffffff;
+			    text-align: left;
+			}
+			th,
+			td {
+			    padding: 12px 15px;
+			}
+			tbody tr {
+			    border-bottom: 1px solid #dddddd;
+			}
+
+			tbody tr:nth-of-type(even) {
+			    background-color: #f3f3f3;
+			}
+
+			tbody tr:last-of-type {
+			    border-bottom: 2px solid #009879;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Unity SystemInfo Table</h1>
+		<p>Crowdsourced table of system capabilities from different devices</p>
+		<p>Find out more, or contribute device details <a href="https://github.com/mvi/UnitySystemInfoTable">here</a>!</p>
+		<table>
+			<tr>
+				<th>unityVersion</th>
+				<th>unityPlatform</th>
+				<th>batteryLevel</th>
+				<th>batteryStatus</th>
+				<th>operatingSystem</th>
+				<th>operatingSystemFamily</th>
+				<th>processorType</th>
+				<th>processorFrequency</th>
+				<th>processorCount</th>
+				<th>systemMemorySize</th>
+				<th>deviceUniqueIdentifier</th>
+				<th>deviceName</th>
+				<th>deviceModel</th>
+				<th>supportsAccelerometer</th>
+				<th>supportsGyroscope</th>
+				<th>supportsLocationService</th>
+				<th>supportsVibration</th>
+				<th>supportsAudio</th>
+				<th>deviceType</th>
+				<th>graphicsMemorySize</th>
+				<th>graphicsDeviceName</th>
+				<th>graphicsDeviceVendor</th>
+				<th>graphicsDeviceID</th>
+				<th>graphicsDeviceVendorID</th>
+				<th>graphicsDeviceType</th>
+				<th>graphicsUVStartsAtTop</th>
+				<th>graphicsDeviceVersion</th>
+				<th>graphicsShaderLevel</th>
+				<th>graphicsMultiThreaded</th>
+				<th>renderingThreadingMode</th>
+				<th>hasHiddenSurfaceRemovalOnGPU</th>
+				<th>hasDynamicUniformArrayIndexingInFragmentShaders</th>
+				<th>supportsShadows</th>
+				<th>supportsRawShadowDepthSampling</th>
+				<th>supportsRenderTextures</th>
+				<th>supportsMotionVectors</th>
+				<th>supportsRenderToCubemap</th>
+				<th>supportsImageEffects</th>
+				<th>supports3DTextures</th>
+				<th>supportsCompressed3DTextures</th>
+				<th>supports2DArrayTextures</th>
+				<th>supports3DRenderTextures</th>
+				<th>supportsCubemapArrayTextures</th>
+				<th>copyTextureSupport</th>
+				<th>supportsComputeShaders</th>
+				<th>supportsGeometryShaders</th>
+				<th>supportsTessellationShaders</th>
+				<th>supportsRenderTargetArrayIndexFromVertexShader</th>
+				<th>supportsInstancing</th>
+				<th>supportsHardwareQuadTopology</th>
+				<th>supports32bitsIndexBuffer</th>
+				<th>supportsSparseTextures</th>
+				<th>supportedRenderTargetCount</th>
+				<th>supportsSeparatedRenderTargetsBlend</th>
+				<th>supportedRandomWriteTargetCount</th>
+				<th>supportsMultisampledTextures</th>
+				<th>supportsMultisampled2DArrayTextures</th>
+				<th>supportsMultisampleAutoResolve</th>
+				<th>supportsTextureWrapMirrorOnce</th>
+				<th>usesReversedZBuffer</th>
+				<th>supportsStencil</th>
+				<th>npotSupport</th>
+				<th>maxTextureSize</th>
+				<th>maxCubemapSize</th>
+				<th>maxComputeBufferInputsVertex</th>
+				<th>maxComputeBufferInputsFragment</th>
+				<th>maxComputeBufferInputsGeometry</th>
+				<th>maxComputeBufferInputsDomain</th>
+				<th>maxComputeBufferInputsHull</th>
+				<th>maxComputeBufferInputsCompute</th>
+				<th>maxComputeWorkGroupSize</th>
+				<th>maxComputeWorkGroupSizeX</th>
+				<th>maxComputeWorkGroupSizeY</th>
+				<th>maxComputeWorkGroupSizeZ</th>
+				<th>supportsAsyncCompute</th>
+				<th>supportsGpuRecorder</th>
+				<th>supportsGraphicsFence</th>
+				<th>supportsAsyncGPUReadback</th>
+				<th>supportsRayTracing</th>
+				<th>supportsSetConstantBuffer</th>
+				<th>constantBufferOffsetAlignment</th>
+				<th>minConstantBufferOffsetAlignment</th>
+				<th>hasMipMaxLevel</th>
+				<th>supportsMipStreaming</th>
+				<th>graphicsPixelFillrate</th>
+				<th>usesLoadStoreActions</th>
+				<th>hdrDisplaySupportFlags</th>
+				<th>supportsConservativeRaster</th>
+				<th>supportsMultiview</th>
+				<th>supportsStoreAndResolveAction</th>
+				<th>supportsVertexPrograms</th>
+				<th>supportsGPUFence</th>
+				<th>maxGraphicsBufferSize</th>
+			</tr>
+			<tr>
+				<td>2021.1.5f1</td>
+				<td>Android</td>
+				<td>1</td>
+				<td>Full</td>
+				<td>Android OS 11 / API-30 (RQ2A.210405.005/7181113)</td>
+				<td>Other</td>
+				<td>ARM64 FP ASIMD AES</td>
+				<td>1996</td>
+				<td>8</td>
+				<td>3592</td>
+				<td>REDACTED</td>
+				<td>REDACTED</td>
+				<td>Google Pixel 3a</td>
+				<td>true</td>
+				<td>true</td>
+				<td>true</td>
+				<td>true</td>
+				<td>true</td>
+				<td>Handheld</td>
+				<td>3848</td>
+				<td>Adreno (TM) 615</td>
+				<td>Qualcomm</td>
+				<td>100730113</td>
+				<td>20803</td>
+				<td>Vulkan</td>
+				<td>true</td>
+				<td>Vulkan 1.1.0 [512.490.0]</td>
+				<td>50</td>
+				<td>true</td>
+				<td>MultiThreaded</td>
+				<td>true</td>
+				<td>true</td>
+				<td>true</td>
+				<td>true</td>
+				<td>true</td>
+				<td>true</td>
+				<td>true</td>
+				<td>true</td>
+				<td>true</td>
+				<td>true</td>
+				<td>true</td>
+				<td>true</td>
+				<td>true</td>
+				<td>Basic, Copy3D, DifferentTypes, TextureToRT, RTToTexture</td>
+				<td>true</td>
+				<td>true</td>
+				<td>true</td>
+				<td>true</td>
+				<td>true</td>
+				<td>false</td>
+				<td>true</td>
+				<td>false</td>
+				<td>8</td>
+				<td>true</td>
+				<td>8</td>
+				<td>1</td>
+				<td>true</td>
+				<td>true</td>
+				<td>1</td>
+				<td>true</td>
+				<td>1</td>
+				<td>Full</td>
+				<td>16384</td>
+				<td>16384</td>
+				<td>524288</td>
+				<td>524288</td>
+				<td>524288</td>
+				<td>524288</td>
+				<td>524288</td>
+				<td>524288</td>
+				<td>1024</td>
+				<td>1024</td>
+				<td>1024</td>
+				<td>64</td>
+				<td>false</td>
+				<td>false</td>
+				<td>true</td>
+				<td>true</td>
+				<td>false</td>
+				<td>true</td>
+				<td>64</td>
+				<td>false</td>
+				<td>true</td>
+				<td>true</td>
+				<td>-1</td>
+				<td>true</td>
+				<td>Supported, RuntimeSwitchable, AutomaticTonemapping</td>
+				<td>false</td>
+				<td>false</td>
+				<td>true</td>
+				<td>true</td>
+				<td>false</td>
+				<td>undefined</td>
+			</tr>
+			<tr>
+				<td>2018.4.22f1</td>
+				<td>OSXPlayer</td>
+				<td>0.93</td>
+				<td>Charging</td>
+				<td>Mac OS X 10.15.2</td>
+				<td>MacOSX</td>
+				<td>Intel(R) Core(TM) i7-4850HQ CPU @ 2.30GHz</td>
+				<td>2300</td>
+				<td>8</td>
+				<td>16384</td>
+				<td>REDACTED</td>
+				<td>REDACTED</td>
+				<td>MacBookPro11,3</td>
+				<td>false</td>
+				<td>false</td>
+				<td>false</td>
+				<td>false</td>
+				<td>true</td>
+				<td>Desktop</td>
+				<td>2048</td>
+				<td>NVIDIA GeForce GT 750M</td>
+				<td>Apple</td>
+				<td>0</td>
+				<td>0</td>
+				<td>Metal</td>
+				<td>true</td>
+				<td>Metal</td>
+				<td>50</td>
+				<td>true</td>
+				<td>undefined</td>
+				<td>false</td>
+				<td>true</td>
+				<td>true</td>
+				<td>true</td>
+				<td>true</td>
+				<td>true</td>
+				<td>true</td>
+				<td>true</td>
+				<td>true</td>
+				<td>undefined</td>
+				<td>true</td>
+				<td>true</td>
+				<td>true</td>
+				<td>Basic, Copy3D, DifferentTypes, TextureToRT, RTToTexture</td>
+				<td>true</td>
+				<td>undefined</td>
+				<td>undefined</td>
+				<td>undefined</td>
+				<td>true</td>
+				<td>false</td>
+				<td>true</td>
+				<td>false</td>
+				<td>8</td>
+				<td>true</td>
+				<td>undefined</td>
+				<td>1</td>
+				<td>undefined</td>
+				<td>false</td>
+				<td>1</td>
+				<td>true</td>
+				<td>1</td>
+				<td>Full</td>
+				<td>16384</td>
+				<td>16384</td>
+				<td>undefined</td>
+				<td>undefined</td>
+				<td>undefined</td>
+				<td>undefined</td>
+				<td>undefined</td>
+				<td>undefined</td>
+				<td>undefined</td>
+				<td>undefined</td>
+				<td>undefined</td>
+				<td>undefined</td>
+				<td>false</td>
+				<td>undefined</td>
+				<td>undefined</td>
+				<td>true</td>
+				<td>undefined</td>
+				<td>undefined</td>
+				<td>undefined</td>
+				<td>undefined</td>
+				<td>undefined</td>
+				<td>true</td>
+				<td>-1</td>
+				<td>undefined</td>
+				<td>undefined</td>
+				<td>undefined</td>
+				<td>undefined</td>
+				<td>undefined</td>
+				<td>true</td>
+				<td>false</td>
+				<td>undefined</td>
+			</tr>
+			<tr>
+				<td>2021.1.3f1</td>
+				<td>WindowsPlayer</td>
+				<td>-1</td>
+				<td>Charging</td>
+				<td>Windows 10  (10.0.19041) 64bit</td>
+				<td>Windows</td>
+				<td>Intel(R) Core(TM) i7-6700K CPU @ 4.00GHz</td>
+				<td>4008</td>
+				<td>8</td>
+				<td>32706</td>
+				<td>REDACTED</td>
+				<td>REDACTED</td>
+				<td>System Product Name (System manufacturer)</td>
+				<td>false</td>
+				<td>false</td>
+				<td>false</td>
+				<td>false</td>
+				<td>true</td>
+				<td>Desktop</td>
+				<td>4070</td>
+				<td>AMD Radeon (TM) R9 Fury Series</td>
+				<td>ATI</td>
+				<td>29440</td>
+				<td>4098</td>
+				<td>Direct3D11</td>
+				<td>true</td>
+				<td>Direct3D 11.0 [level 11.1]</td>
+				<td>50</td>
+				<td>false</td>
+				<td>LegacyJobified</td>
+				<td>false</td>
+				<td>true</td>
+				<td>true</td>
+				<td>true</td>
+				<td>true</td>
+				<td>true</td>
+				<td>true</td>
+				<td>true</td>
+				<td>true</td>
+				<td>true</td>
+				<td>true</td>
+				<td>true</td>
+				<td>true</td>
+				<td>Basic, Copy3D, DifferentTypes, TextureToRT, RTToTexture</td>
+				<td>true</td>
+				<td>true</td>
+				<td>true</td>
+				<td>true</td>
+				<td>true</td>
+				<td>false</td>
+				<td>true</td>
+				<td>true</td>
+				<td>8</td>
+				<td>true</td>
+				<td>8</td>
+				<td>1</td>
+				<td>true</td>
+				<td>false</td>
+				<td>1</td>
+				<td>true</td>
+				<td>1</td>
+				<td>Full</td>
+				<td>16384</td>
+				<td>16384</td>
+				<td>128</td>
+				<td>128</td>
+				<td>128</td>
+				<td>128</td>
+				<td>128</td>
+				<td>32</td>
+				<td>1024</td>
+				<td>1024</td>
+				<td>1024</td>
+				<td>64</td>
+				<td>false</td>
+				<td>false</td>
+				<td>true</td>
+				<td>true</td>
+				<td>false</td>
+				<td>true</td>
+				<td>256</td>
+				<td>false</td>
+				<td>true</td>
+				<td>true</td>
+				<td>-1</td>
+				<td>false</td>
+				<td>Supported, RuntimeSwitchable, AutomaticTonemapping</td>
+				<td>false</td>
+				<td>false</td>
+				<td>true</td>
+				<td>true</td>
+				<td>false</td>
+				<td>undefined</td>
+			</tr>
+			<tr>
+				<td>2021.2.0a14</td>
+				<td>WindowsPlayer</td>
+				<td>-1</td>
+				<td>Charging</td>
+				<td>Windows 10  (10.0.19041) 64bit</td>
+				<td>Windows</td>
+				<td>Intel(R) Core(TM) i7-6700K CPU @ 4.00GHz</td>
+				<td>4008</td>
+				<td>8</td>
+				<td>16291</td>
+				<td>REDACTED</td>
+				<td>REDACTED</td>
+				<td>System Product Name (System manufacturer)</td>
+				<td>false</td>
+				<td>false</td>
+				<td>false</td>
+				<td>false</td>
+				<td>true</td>
+				<td>Desktop</td>
+				<td>8088</td>
+				<td>NVIDIA GeForce GTX 1070</td>
+				<td>NVIDIA</td>
+				<td>7041</td>
+				<td>4318</td>
+				<td>Direct3D11</td>
+				<td>true</td>
+				<td>Direct3D 11.0 [level 11.1]</td>
+				<td>50</td>
+				<td>false</td>
+				<td>LegacyJobified</td>
+				<td>false</td>
+				<td>true</td>
+				<td>true</td>
+				<td>true</td>
+				<td>true</td>
+				<td>true</td>
+				<td>true</td>
+				<td>true</td>
+				<td>true</td>
+				<td>true</td>
+				<td>true</td>
+				<td>true</td>
+				<td>true</td>
+				<td>Basic, Copy3D, DifferentTypes, TextureToRT, RTToTexture</td>
+				<td>true</td>
+				<td>true</td>
+				<td>true</td>
+				<td>true</td>
+				<td>true</td>
+				<td>false</td>
+				<td>true</td>
+				<td>true</td>
+				<td>8</td>
+				<td>true</td>
+				<td>8</td>
+				<td>1</td>
+				<td>true</td>
+				<td>false</td>
+				<td>1</td>
+				<td>true</td>
+				<td>1</td>
+				<td>Full</td>
+				<td>16384</td>
+				<td>16384</td>
+				<td>128</td>
+				<td>128</td>
+				<td>128</td>
+				<td>128</td>
+				<td>128</td>
+				<td>32</td>
+				<td>1024</td>
+				<td>1024</td>
+				<td>1024</td>
+				<td>64</td>
+				<td>false</td>
+				<td>false</td>
+				<td>true</td>
+				<td>true</td>
+				<td>false</td>
+				<td>true</td>
+				<td>256</td>
+				<td>false</td>
+				<td>true</td>
+				<td>true</td>
+				<td>-1</td>
+				<td>false</td>
+				<td>Supported, RuntimeSwitchable, AutomaticTonemapping</td>
+				<td>true</td>
+				<td>false</td>
+				<td>true</td>
+				<td>true</td>
+				<td>false</td>
+				<td>2147483648</td>
+			</tr>
+		</table>
+	</body>
+</html>
